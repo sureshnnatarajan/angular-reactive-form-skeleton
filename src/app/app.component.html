@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Track Portfolio</h4>
+    <form [formGroup]="trackPortfolioForm" (ngSubmit) = "onSubmit()">
+        <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <td><label>Current Date :</label></td>
+                <td>
+                  <input class="form-control" type = "text" formControlName = "currentDate" />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Invested Amount :</label></td>
+                <td>
+                  <input class="form-control" type = "text" formControlName = "investedAmount" />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Closing Value :</label></td>
+                <td>
+                  <!-- <input class="form-control" type="text" [formControl] = "closingValue" />-->
+                  <input class="form-control" type = "text" formControlName = "closingValue" />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Closing Percentage :</label></td>
+                <td>
+                  <input class="form-control" type = "text" formControlName = "closingPercentage" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                    <button class = "btn btn-default" type="submit" [disabled]="!trackPortfolioForm.valid">Submit</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+    </form>
+  </div>
+  <div class="col-sm-6">
+    <pre>{{formValue}}</pre>
+  </div>
+</div>
